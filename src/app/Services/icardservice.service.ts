@@ -8,10 +8,10 @@ import { IcardType } from '../Interface/icardType.model';
 export class icardserviceService implements OnInit {
 
   apiUrl ='https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001';
-  //employeeData !: IcardType;
+  
   
   constructor(private http:HttpClient) { }
-
+  // employeeData !: IcardType;
   ngOnInit(){
    // this.callApiForData();
     }
@@ -22,7 +22,10 @@ export class icardserviceService implements OnInit {
    }
   callApiToUpdateDatat(){  }
   callApiToDeleteData(){ }
-  callApiToAddData(){ }
+  callApiToAddData(newEmployee:IcardType,id:number){
+    newEmployee.id = id;
+    return this.http.post<IcardType[]>(this.apiUrl,newEmployee);
+   }
 
 
 }
