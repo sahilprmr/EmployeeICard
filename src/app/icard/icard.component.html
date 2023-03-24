@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- I-Card Information! -->
+    <div class="row col-xs-12">
+        <div class="icard_card">
+                <div class="icard_img">
+                    <a> <img src={{employees[count].imageUrl}} alt="Employee" width="133px" height="170px"> </a>
+                </div>
+            <div class="icard_personalInfo" >
+                <div class="icard_content">
+                    <div class="form-group">
+                        <label for="EmployeeName">Name :&nbsp;</label>
+                        <input name="EmployeeName" class="input" value="{{employees[count].firstName}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmployeeEmail">Email :&nbsp;</label>
+                        <input name="EmployeeEmail" class="input" value="{{employees[count].email}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmployeeDob">DOB :&nbsp;</label>
+                        <input name="EmployeeDob" class="input" value="{{employees[count].dob}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmployeeMob">Mobile :&nbsp;</label>
+                        <input name="EmployeeMob" class="input" value="{{employees[count].contactNumber}}" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    <div class="switchingEmp">
+                        <button  class="slideBtn" (click)="leftBtn()"><</button>
+                        <button class="slideBtn" (click)="rightBtn()">></button>
+                    </div>
+</div>    
+<!-- Buttons -->
+        <div class="buttonRow col-xs-12">
+            <hr>
+            <div class="icard_Mng_Button">
+                <button class="icard_Btns">Add</button>
+                <button class="icard_Btns">Employee</button>
+                <button class="icard_Btns">Edit</button>
+            </div>
+        </div>
+</div>

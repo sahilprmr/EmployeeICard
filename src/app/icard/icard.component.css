@@ -1,7 +1,7 @@
 .input{
     outline: none;
     border: none;
-    width: 133px;
+    width: 150px;
 }
 .container{
     height: 90vh;
@@ -33,15 +33,14 @@
 .icard_card{
     border: 1px solid grey;
     border-radius: 10px;
-    width:250px;
+    width:270px;
     height:370px;
     display: flex;
     flex-direction: column;
     justify-items:center;
     justify-content: center;
-    margin: auto;
+    margin:auto;
     box-shadow: rgb(38, 57, 77) 0px 20px 25px -10px;
-    
 }
 .icard_card:hover{
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
