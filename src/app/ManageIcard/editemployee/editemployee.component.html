@@ -1,1 +1,25 @@
-<p>editemployee works!</p>
+<p class="FormHeading">Edit Employee Details</p>
+<div class="container">
+    <form #editform = "ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" required ngModel >            
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" required email ngModel>            
+        </div>
+        <div class="form-group">
+            <label for="dob">D.O.B</label>
+            <input type="text" class="form-control" name="dob">            
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="number" class="form-control"name="mobile">            
+        </div>
+        <div class="submitformbtns">
+            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-danger">Close</button>
+        </div>
+    </form>
+</div>

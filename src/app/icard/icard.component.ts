@@ -11,6 +11,8 @@ import { icardserviceService } from '../Services/icardservice.service';
 export class IcardComponent {
 
   employees: IcardType[] = [];
+  editemployee = false;
+  addemployee = false;
   count = 0;
   constructor(private icardservice: icardserviceService) { }
 
@@ -19,6 +21,7 @@ export class IcardComponent {
       this.employees = res;
       console.log(this.employees);
     })
+
   }
 
   rightBtn() {
@@ -36,5 +39,17 @@ export class IcardComponent {
     else {
       this.count = 10;
     }
+  }
+  editingEmpBtnClicked(){
+    this.editemployee = !this.editemployee;
+    this.addemployee = false;
+  }
+  addEmpBtnClicked(){
+    this.addemployee = !this.addemployee;
+    this.editemployee = false;
+  }
+  onlyICard(){
+    this.editemployee = false;
+    this.addemployee  = false;
   }
 }

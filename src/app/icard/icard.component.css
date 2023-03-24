@@ -9,6 +9,11 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+.xyz{
+    display: flex;
+    /* flex-direction:row; */
+    justify-content: center;
+}
 .icard_personalInfo{
     display: flex;
     justify-content: space-evenly   ;
@@ -20,6 +25,9 @@
 .icard_Mng_Button{
     display: flex;
     justify-content: space-evenly;  
+    font-size: 20px;
+    font-family: cursive;
+    
 }
 .icard_img{
     display: block;
@@ -49,8 +57,8 @@
     display: block;
 }
 .icard_Btns{
-    border: 0 solid rgba(255, 255, 255, 0);
-    background-color: rgba(0, 0, 0, 0.225);
+    border: 0 solid rgba(41, 155, 226, 0);
+    background-color: rgba(20, 18, 18, 0.225);
 }
 .icard_Btns:hover{
     border-radius: 5px;
