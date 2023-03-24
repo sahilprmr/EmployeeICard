@@ -1,0 +1,68 @@
+.input{
+    outline: none;
+    border: none;
+    width: 133px;
+}
+.container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.icard_personalInfo{
+    display: flex;
+    justify-content: space-evenly   ;
+    flex-direction: column;
+    border: none;
+    margin: auto;
+}
+
+.icard_Mng_Button{
+    display: flex;
+    justify-content: space-evenly;  
+}
+.icard_img{
+    display: block;
+    margin:auto;
+}
+.switchingEmp{
+    display: flex;
+    justify-content: space-between;  
+    height:1px;
+}
+.icard_card{
+    border: 1px solid grey;
+    border-radius: 10px;
+    width:250px;
+    height:370px;
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    justify-content: center;
+    margin: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 25px -10px;
+    
+}
+.icard_card:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.buttonRow{
+    display: block;
+}
+.icard_Btns{
+    border: 0 solid rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.225);
+}
+.icard_Btns:hover{
+    border-radius: 5px;
+}
+.slideBtn{
+    font-size: 30px;
+    border:none;
+    background-color:transparent;
+}
+.slideBtn:hover{
+    font-size: 35px;
+    text-shadow: 20px;
+    font-weight: bolder;
+}
