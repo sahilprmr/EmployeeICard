@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { take } from 'rxjs';
+import { BehaviorSubject, take } from 'rxjs';
 import { IcardType } from '../Interface/icardType.model';
 import { icardserviceService } from '../Services/icardservice.service';
 
@@ -11,22 +11,24 @@ import { icardserviceService } from '../Services/icardservice.service';
 export class IcardComponent {
 
   employees: IcardType[] = [];
-  editemployee = false;
-  addemployee = false;
+  empToBeDeleted!:IcardType;
+  imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYiTsb3IFAF44BEfO-IDrTO9Pa1XsiuLMb0g&usqp=CAU';
+  editemployee =this.icardservice.editemployee;
+  addemployee = this.icardservice.addemployee;
   count = 0;
+  EmployeeId = new BehaviorSubject<number>(0);
   constructor(private icardservice: icardserviceService) { }
-
   ngOnInit() {
-    this.icardservice.callApiForData().subscribe(res => {
-      this.employees = res;
-      console.log(this.employees);
-    })
-
+    this.icardservice.callApiForData().
+    subscribe(res => {
+                      this.employees = res;
+                      
+    })   
   }
 
   rightBtn() {
     if (this.count < 10) {
-      this.count++;
+      this.count++;      
     }
     else {
       this.count = 0;
@@ -40,16 +42,19 @@ export class IcardComponent {
       this.count = 10;
     }
   }
-  editingEmpBtnClicked(){
-    this.editemployee = !this.editemployee;
-    this.addemployee = false;
+  editingEmpBtnClicked(id:number){
+    this.EmployeeId.next(id);
+    this.icardservice.editemployee.next(!this.editemployee.value);
+    this.icardservice.addemployee.next(false);
   }
   addEmpBtnClicked(){
-    this.addemployee = !this.addemployee;
-    this.editemployee = false;
+    this.addemployee.next(!this.addemployee.value);  
+    this.icardservice.editemployee.next(false);
   }
   onlyICard(){
-    this.editemployee = false;
-    this.addemployee  = false;
+    this.icardservice.addemployee.next(false);
+    this.icardservice.editemployee.next(false);
+    this.empToBeDeleted = this.employees[this.count]; 
+    this.icardservice.callApiToDeleteData(this.empToBeDeleted).subscribe();
   }
 }

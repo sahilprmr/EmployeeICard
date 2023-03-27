@@ -9,10 +9,11 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
-.xyz{
+.empwithform{
     display: flex;
     /* flex-direction:row; */
     justify-content: center;
+    border: 0px solid green;
 }
 .icard_personalInfo{
     display: flex;
@@ -21,13 +22,11 @@
     border: none;
     margin: auto;
 }
-
 .icard_Mng_Button{
     display: flex;
     justify-content: space-evenly;  
     font-size: 20px;
     font-family: cursive;
-    
 }
 .icard_img{
     display: block;
@@ -39,10 +38,10 @@
     height:1px;
 }
 .icard_card{
-    border: 1px solid grey;
+    border: 0 solid grey;
     border-radius: 10px;
     width:270px;
-    height:370px;
+    height:360px;
     display: flex;
     flex-direction: column;
     justify-items:center;

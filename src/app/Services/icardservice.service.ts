@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { IcardType } from '../Interface/icardType.model';
 
 @Injectable({
@@ -7,9 +8,11 @@ import { IcardType } from '../Interface/icardType.model';
 })
 export class icardserviceService implements OnInit {
 
-  apiUrl ='https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001';
-  
-  
+  apiUrl ='http://localhost:3000/employee';
+
+  editemployee = new BehaviorSubject<boolean>(false);
+  addemployee  = new BehaviorSubject<boolean>(false);
+
   constructor(private http:HttpClient) { }
   // employeeData !: IcardType;
   ngOnInit(){
@@ -18,14 +21,20 @@ export class icardserviceService implements OnInit {
 
   callApiForData(){ 
    return this.http.get<IcardType[]>(this.apiUrl)
-
    }
-  callApiToUpdateDatat(){  }
-  callApiToDeleteData(){ }
-  callApiToAddData(newEmployee:IcardType,id:number){
-    newEmployee.id = id;
-    return this.http.post<IcardType[]>(this.apiUrl,newEmployee);
+  callApiToUpdateData(empEditedDetails:IcardType){ 
+    return this.http.put<IcardType[]>(this.apiUrl+'/'+empEditedDetails.id,empEditedDetails);
+   }
+  callApiToDeleteData(empToBeDeleted:IcardType){
+    return this.http.delete<IcardType>(this.apiUrl+'/'+empToBeDeleted.id)
    }
 
+  callApiToAddData(newEmployee:IcardType){
+    return this.http.post<IcardType>(this.apiUrl,newEmployee);
+   }
 
+   closeManageCard(){
+    this.addemployee.next(false);
+    this.editemployee.next(false);
+   }
 }

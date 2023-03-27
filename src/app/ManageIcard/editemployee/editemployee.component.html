@@ -3,23 +3,23 @@
     <form #editform = "ngForm">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" required ngModel >            
+            <input type="text" class="form-control" name="name"  [(ngModel)]="empToBeEdited.name" >            
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" required email ngModel>            
+            <input type="email" class="form-control" name="email"  required email [(ngModel)]="empToBeEdited.email">            
         </div>
         <div class="form-group">
             <label for="dob">D.O.B</label>
-            <input type="text" class="form-control" name="dob">            
+            <input type="text" class="form-control" name="dob"  [(ngModel)]="empToBeEdited.dob">            
         </div>
         <div class="form-group">
             <label for="mobile">Mobile</label>
-            <input type="number" class="form-control"name="mobile">            
+            <input type="number" class="form-control"name="contactNumber" [(ngModel)]="empToBeEdited.contactNumber">            
         </div>
         <div class="submitformbtns">
-            <button class="btn btn-primary">Save</button>
-            <button class="btn btn-danger">Close</button>
+            <button class="btn btn-primary" (click)="SaveEditedForm()">Save</button>
+            <button class="btn btn-danger" (click)="closeEdit()">Close</button>
         </div>
     </form>
 </div>

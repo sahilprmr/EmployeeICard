@@ -3,23 +3,23 @@
     <form #addform = "ngForm">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" required ngModel >            
+            <input type="text" class="form-control" name="name" value="" required ngModel >            
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" required email ngModel>            
+            <input type="email" class="form-control" name="email" value=""  required email ngModel>            
         </div>
         <div class="form-group">
             <label for="dob">D.O.B</label>
-            <input type="text" class="form-control" name="dob">            
+            <input type="text" class="form-control" name="dob" value=""  ngModel>            
         </div>
         <div class="form-group">
             <label for="mobile">Mobile</label>
-            <input type="number" class="form-control"name="mobile">            
+            <input type="number" class="form-control"name="contactNumber" value=""  ngModel>            
         </div>
         <div class="submitformbtns">
-            <button class="btn btn-primary">Save</button>
-            <button class="btn btn-danger">Close</button>
+            <button class="btn btn-primary" (click)="AddNewEmployeeToApi(addform.value)">Add</button>
+            <button class="btn btn-danger" (click)="closeAdd()">Close</button>
         </div>
     </form>
 </div>
