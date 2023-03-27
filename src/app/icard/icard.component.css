@@ -57,7 +57,7 @@
 }
 .icard_Btns{
     border: 0 solid rgba(41, 155, 226, 0);
-    background-color: rgba(20, 18, 18, 0.225);
+    background-color: transparent;
 }
 .icard_Btns:hover{
     border-radius: 5px;

@@ -1,6 +1,5 @@
 <div class="container">
     <!-- I-Card Information! -->
-    
         <div class="row col-xs-12 empwithform">
             <div class="icard_card">
                     <div class="icard_img">
@@ -34,7 +33,7 @@
                         <app-editemployee *ngIf="editemployee.value"></app-editemployee>
                     </div>
                 </div>
-        
+                
                     <!-- Right Left Arrow Buttons -->
                     <div class="switchingEmp">
                         <button  class="slideBtn" (click)="leftBtn()"><</button>
@@ -44,9 +43,9 @@
                     <div class="buttonRow col-xs-12">
                         <hr>
                         <div class="icard_Mng_Button">
-                            <button class="icard_Btns" (click)="addEmpBtnClicked()">Add</button>
-                            <button class="icard_Btns" (click)="onlyICard()">Employee</button>
-                            <button class="icard_Btns" (click)="editingEmpBtnClicked(employees[count].id)">Edit</button>
+                            <button class="icard_Btns" (click)="addEmpBtnClicked()"><img src="assets\add.png" width="70px" height="70px" alt="Add New Employee"></button>
+                            <button class="icard_Btns" (click)="onlyICard()"><img  src="assets\Delete.png" width="40px" height="40px" alt="DeleteEmployee"></button>
+                            <button class="icard_Btns" (click)="editingEmpBtnClicked(employees[count].id)"><img src="assets\edit.png" width="50px" height="50px" alt="Edit Employee"></button>
                         </div>
                     </div>
 </div>
