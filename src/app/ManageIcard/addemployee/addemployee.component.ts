@@ -17,8 +17,8 @@ constructor(private icardservice:icardserviceService,private icard:IcardComponen
 ngOnInit(){
   
 }
-AddNewEmployeeToApi(newEmpData:HTMLFormElement){
-  
+AddNewEmployeeToApi(newEmpData:any){
+  this.newEmployee = newEmpData;
   console.log(this.newEmployee);
   this.icardservice.callApiToAddData(this.newEmployee).subscribe();
 }
