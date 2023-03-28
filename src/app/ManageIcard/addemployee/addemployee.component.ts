@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Form } from '@angular/forms';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Form, NgForm } from '@angular/forms';
 import { IcardComponent } from 'src/app/icard/icard.component';
 import { IcardType } from 'src/app/Interface/icardType.model';
 import { icardserviceService } from 'src/app/Services/icardservice.service';
@@ -14,16 +14,14 @@ export class AddemployeeComponent {
   id = this.icard.count;
 constructor(private icardservice:icardserviceService,private icard:IcardComponent){}
 
-ngOnInit(){
-  
-}
+ngOnInit(){}
+
 AddNewEmployeeToApi(newEmpData:any){
   this.newEmployee = newEmpData;
-  console.log(this.newEmployee);
   this.icardservice.callApiToAddData(this.newEmployee).subscribe();
 }
-  closeAdd(){
-    this.icardservice.closeManageCard();
+closeAdd(){
+  this.icardservice.closeManageCard();
 }
 }
 

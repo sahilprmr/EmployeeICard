@@ -22,24 +22,25 @@ export class IcardComponent {
     this.icardservice.callApiForData().
     subscribe(res => {
                       this.employees = res;
-                      
+                      console.log(this.employees.length);         
     })   
   }
+  
 
   rightBtn() {
-    if (this.count < 10) {
-      this.count++;      
+    if (this.count === this.employees.length) {
+      this.count = 0;  
     }
     else {
-      this.count = 0;
+      this.count++;
     }
   }
   leftBtn() {
-    if (this.count > 0) {
-      this.count--;
+    if (this.count === 0) {
+      this.count = this.employees.length;
     }
     else {
-      this.count = 10;
+      this.count--;
     }
   }
   editingEmpBtnClicked(id:number){

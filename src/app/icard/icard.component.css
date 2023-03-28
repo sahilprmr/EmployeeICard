@@ -35,7 +35,7 @@
 .switchingEmp{
     display: flex;
     justify-content: space-between;  
-    height:1px;
+    height:5px;
 }
 .icard_card{
     border: 0 solid grey;
@@ -49,6 +49,28 @@
     margin:auto;
     box-shadow: rgb(38, 57, 77) 0px 20px 25px -10px;
 }
+.cardleft{
+    animation: slideleft 0.7s ease-in;
+}
+@keyframes slideleft {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-800px);
+    }
+}
+.cardright{
+    animation: slideright 0.7s ease-in;
+}
+@keyframes slideright {
+    0%{
+        transform: translateX(600px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 .icard_card:hover{
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
@@ -56,11 +78,13 @@
     display: block;
 }
 .icard_Btns{
-    border: 0 solid rgba(41, 155, 226, 0);
+    border: 0 solid rgba(255, 255, 255, 0);
     background-color: transparent;
+    box-shadow: 1px 2px 5px;
+    border-radius: 15px;
 }
 .icard_Btns:hover{
-    border-radius: 5px;
+    border-radius: 30%;
 }
 .slideBtn{
     font-size: 30px;
